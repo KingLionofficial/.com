@@ -16,7 +16,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh; /* Ajuste para asegurar que el contenido se muestra completamente */
         }
         h1 {
             text-align: center;
@@ -37,11 +37,14 @@
         li {
             margin-bottom: 10px;
         }
-        img {
+        .logo-container {
             max-width: 100%;
-            height: auto;
-            margin-top: 300px; /* Ajuste la distancia entre el título y el logo */
+            text-align: center;
             margin-bottom: 50px; /* Ajuste la distancia entre el logo y el subtítulo */
+        }
+        img {
+            max-width: 80%; /* Ajuste del ancho máximo del logo */
+            height: auto;
         }
         /* Media query para dispositivos móviles */
         @media screen and (max-width: 768px) {
@@ -51,15 +54,14 @@
             h1 {
                 font-size: 24px; /* Tamaño de fuente más grande para dispositivos móviles */
             }
-            img {
-                margin-top: 100px; /* Ajuste la distancia entre el título y el logo en dispositivos móviles */
-            }
         }
     </style>
 </head>
 <body>
     <h1>King Lion</h1>
-    <img src="images/logo.png" alt="Logo de King Lion">
+    <div class="logo-container">
+        <img src="images/logo.png" alt="Logo de King Lion">
+    </div>
     <h2>La Revolución de las Criptomonedas Salvajes</h2>
     <p>¡Bienvenidos, valientes cazadores de criptomoneda, a la jungla financiera de King Lion! Prepárense para adentrarse en un mundo donde la realeza felina gobierna los mercados digitales con ferocidad y nobleza. Desde su majestuoso trono en Binance Wallet, King Lion ha llegado para cambiar las reglas del juego y liderar la manada hacia nuevas alturas de prosperidad financiera.</p>
     <p>¿Qué hace a King Lion la moneda digital más codiciada del reino? ¡Sencillo! King Lion promete un reino de oportunidades emocionantes para todos sus seguidores. Desde su lanzamiento en la plataforma Binance Wallet, King Lion ha rugido con fuerza, estableciéndose rápidamente como el rey de las criptomonedas. Aquí hay algunas razones por las cuales King Lion merece su corona:</p>
