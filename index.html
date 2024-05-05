@@ -9,25 +9,18 @@
             background-color: black;
             color: white;
             padding: 20px;
-            font-size: 16px; /* Tamaño de fuente base */
-            line-height: 1.6; /* Espaciado entre líneas */
-        }
-        .section-blue {
-            background-color: rgba(0, 255, 255, 0.1); /* Desvanecido azul cian */
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .section-orange {
-            background-color: rgba(255, 165, 0, 0.1); /* Desvanecido naranja cian */
-            padding: 20px;
-            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.6;
         }
         h1 {
             text-align: center;
             color: cyan;
+            font-size: 36px;
+            margin-bottom: 30px;
         }
         h2 {
             text-align: center;
+            font-size: 24px;
         }
         p {
             text-align: justify;
@@ -42,47 +35,150 @@
         .logo-container {
             max-width: 100%;
             text-align: center;
-            margin-bottom: 50px; /* Ajuste la distancia entre el logo y el subtítulo */
+            margin-bottom: 50px;
         }
         img {
-            max-width: 100%; /* Ajuste del ancho máximo del logo */
+            max-width: 100%;
             height: auto;
         }
-        /* Media query para dispositivos móviles */
-        @media screen and (max-width: 768px) {
-            body {
-                padding: 10px; /* Ajuste del padding para dispositivos móviles */
+        .section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: rgba(0, 255, 255, 0.1);
+        }
+        .section-blue {
+            background-color: rgba(0, 0, 255, 0.3);
+        }
+        .section-orange {
+            background-color: rgba(255, 165, 0, 0.3);
+        }
+        .section-tokenomics {
+            background-color: rgba(0, 255, 255, 0.3);
+        }
+        .section-roadmap {
+            background-color: rgba(255, 0, 0, 0.3);
+        }
+        .section-social {
+            background-color: rgba(255, 255, 0, 0.3);
+        }
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+        .menu-icon {
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu-icon-bar {
+            width: 100%;
+            height: 2px;
+            background-color: cyan;
+            margin: 6px 0;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .menu-open .menu-icon-bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .menu-open .menu-icon-bar:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-open .menu-icon-bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .menu {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .menu-link {
+            display: inline-block;
+            margin-right: 20px;
+            color: cyan;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .menu-link:hover {
+            text-decoration: underline;
+            color: #0ff; /* Cyan más brillante */
+        }
+
+        /* Estilos para pantallas pequeñas */
+        @media only screen and (max-width: 600px) {
+            .menu-toggle {
+                display: block;
             }
-            h1 {
-                font-size: 24px; /* Tamaño de fuente más grande para dispositivos móviles */
+            .menu {
+                display: none;
             }
-            .logo-container {
-                margin-top: 50px; /* Ajuste la distancia entre el título y el logo en dispositivos móviles */
+            .menu-link {
+                display: block;
+                margin-bottom: 10px;
             }
         }
     </style>
 </head>
 <body>
+    <h1>King Lion</h1>
+    <!-- Botón de hamburguesa para versiones móviles -->
+    <button class="menu-toggle" onclick="toggleMenu()">
+        <div class="menu-icon">
+            <div class="menu-icon-bar"></div>
+            <div class="menu-icon-bar"></div>
+            <div class="menu-icon-bar"></div>
+        </div>
+    </button>
+    <!-- Enlaces de las secciones -->
+    <nav class="menu">
+        <a href="#welcome-section" class="menu-link">Bienvenidos</a>
+        <a href="#lion-section" class="menu-link">King Lion</a>
+        <a href="#tokenomics-section" class="menu-link">Tokenomics</a>
+        <a href="#roadmap-section" class="menu-link">Roadmap</a>
+        <a href="#social-section" class="menu-link">Redes Sociales</a>
+    </nav>
+    <!-- Logo -->
     <div class="logo-container">
         <img src="images/logo.png" alt="Logo de King Lion">
     </div>
-    <h1>King Lion</h1>
-    <div class="section-blue">
+    <!-- Secciones -->
+    <div id="welcome-section" class="section section-blue">
         <h2>¡Bienvenidos a la jungla financiera de King Lion!</h2>
         <p>Prepárense para adentrarse en un mundo donde la realeza felina gobierna los mercados digitales con ferocidad y nobleza. Desde su majestuoso trono en Binance Wallet, King Lion ha llegado para cambiar las reglas del juego y liderar la manada hacia nuevas alturas de prosperidad financiera.</p>
     </div>
-    <div class="section-orange">
+    <div id="lion-section" class="section section-orange">
         <h2>¿Qué hace a King Lion la moneda digital más codiciada del reino?</h2>
         <p>¡Sencillo! King Lion promete un reino de oportunidades emocionantes para todos sus seguidores. Desde su lanzamiento en la plataforma Binance Wallet, King Lion ha rugido con fuerza, estableciéndose rápidamente como el rey de las criptomonedas.</p>
-        <ol>
-            <li><strong>Quemas Programadas:</strong> En el corazón de la estrategia de King Lion yace el compromiso con la escasez y el valor. Regularmente, King Lion organiza ceremonias de quema de tokens, reduciendo así el suministro total y aumentando el valor individual de cada ficha. Esta práctica única asegura que cada poseedor de King Lion tenga una participación aún más valiosa en el reino digital.</li>
-            <li><strong>Minería con Garra:</strong> ¡Prepárense para desenterrar tesoros digitales! King Lion ofrece a sus seguidores la oportunidad de participar en la emocionante actividad de la minería de criptomonedas. Con su algoritmo de minería innovador, King Lion permite que cualquier persona con un dispositivo conectado a Internet pueda unirse a la caza de tokens y contribuir al crecimiento y seguridad de la red.</li>
-            <li><strong>Binance Wallet: El Refugio Seguro de la Web3:</strong> Como la guarnición oficial de King Lion, Binance Wallet ofrece un santuario seguro para los leales seguidores de esta majestuosa criptomoneda. Con la billetera web3 de Binance, los usuarios pueden acceder de manera segura a sus activos digitales, realizar transacciones con facilidad y experimentar la libertad financiera sin igual que solo King Lion puede ofrecer.</li>
-        </ol>
     </div>
-    <div class="section-blue">
-        <h2>Únete a la manada</h2>
-        <p>King Lion no es solo una criptomoneda; es un movimiento, una revolución en el mundo financiero digital. Prepárate para rugir junto al rey de las criptomonedas mientras conquistamos nuevos territorios y escribimos el próximo capítulo en la historia del dinero digital. ¡Que empiece la cacería!</p>
+    <div id="tokenomics-section" class="section section-tokenomics">
+        <h2>Tokenomics</h2>
+        <p>Descripción de la economía de tokens de King Lion...</p>
     </div>
+    <div id="roadmap-section" class="section section-roadmap">
+        <h2>Roadmap</h2>
+        <p>Plan de desarrollo de King Lion...</p>
+    </div>
+    <div id="social-section" class="section section-social">
+        <h2>Redes Sociales</h2>
+        <p>Enlaces a las redes sociales de King Lion...</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('menu-open');
+        }
+    </script>
 </body>
 </html>
